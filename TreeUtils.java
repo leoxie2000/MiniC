@@ -20,7 +20,8 @@ public class TreeUtils {
         level = 0;
         return process(t, ruleNames).replaceAll("(?m)^\\s+$", "").replaceAll("\\r?\\n\\r?\\n", Eol);
     }
-
+    //https://stackoverflow.com/questions/50064110/antlr4-java-pretty-print-parse-tree-to-stdout
+    //Used as reference
     private static String process(final Tree t, final List<String> ruleNames) {
         if (t.getChildCount() == 0) return Utils.escapeWhitespace(Trees.getNodeText(t, ruleNames), false);
         StringBuilder sb = new StringBuilder();
